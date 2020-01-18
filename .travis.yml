@@ -1,3 +1,8 @@
+language: python
+
+python:
+  - "3.8"
+
 services:
   - docker
 
@@ -7,4 +12,3 @@ jobs:
       script: pytest flask/
     - stage: deploy
       script: docker-compose up --build
-language: python
