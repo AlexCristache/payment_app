@@ -9,6 +9,6 @@ services:
 jobs:
   include:
     - stage: test
-      script: pytest flask/
+      script: pytest
     - stage: deploy
       script: docker-compose up --build
