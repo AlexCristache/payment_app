@@ -13,7 +13,6 @@ jobs:
       script:
         - pylint flask/app/
         - pylint flask/run.py
-        - pylint flask/tests
     - stage: test
       script:
         - pytest

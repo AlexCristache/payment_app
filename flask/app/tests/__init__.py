@@ -1,0 +1,3 @@
+"""
+Init the tests.
+"""
