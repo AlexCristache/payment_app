@@ -1,1 +1,2 @@
-payment_app_venv/
+flask/payment_app_venv/
+flask/__pycache__/
