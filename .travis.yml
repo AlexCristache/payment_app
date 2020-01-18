@@ -6,18 +6,14 @@ python:
 install:
   - pip install -r flask/requirements.txt
 
-services:
-  - docker
 
-script:
-  - pytest
-  - docker-compose up --build
-    
-    #jobs:
-    #  include:
-    #    - stage: test
-    #      script:
-    #        - pytest
-    #    - stage: deploy
-    #      script:
-    #          - docker-compose up --build
+jobs:
+  include:
+    - stage: pylint
+      script:
+        - pylint flask/app/
+        - pylint flask/run.py
+        - pylint flask/tests
+    - stage: test
+      script:
+        - pytest
