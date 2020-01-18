@@ -1,7 +1,10 @@
+services:
+  - docker
+
 jobs:
   include:
     - stage: test
-      script: pytest
+      script: pytest flask/
     - stage: deploy
       script: docker-compose up --build
 language: python
