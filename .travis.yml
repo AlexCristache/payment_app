@@ -3,14 +3,21 @@ language: python
 python:
   - "3.8"
 
+install:
+  - pip install -r flask/requirements.txt
+
 services:
   - docker
 
-jobs:
-  include:
-    - stage: test
-      script:
-        - pytest
-    - stage: deploy
-      script:
-        - docker-compose up --build
+script:
+  - pytest
+  - docker-compose up --build
+    
+    #jobs:
+    #  include:
+    #    - stage: test
+    #      script:
+    #        - pytest
+    #    - stage: deploy
+    #      script:
+    #          - docker-compose up --build
