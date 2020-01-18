@@ -17,3 +17,16 @@ services:
     restart: always
     ports:
       - "80:80"
+  data:
+    image: postgres:9.6
+    volumes:
+      - /var/lib/postgresql
+    command: "true"
+ 
+  postgres:
+    restart: always
+    build: ./postgresql
+    volumes:
+      - data
+    ports:
+      - "5432:5432"
