@@ -1,8 +1,14 @@
-from app import app
+"""
+Define the app endpoints.
+"""
 import os
+from app import app # pylint: disable=R0401
 
 @app.route("/")
 def index():
+    """
+    The home of the app.
+    """
     app_name = os.getenv("APP_NAME")
 
     if app_name:
