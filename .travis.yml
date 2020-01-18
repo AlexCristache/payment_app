@@ -4,3 +4,4 @@ jobs:
       script: pytest
     - stage: deploy
       script: docker-compose up --build
+language: python
