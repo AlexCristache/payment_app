@@ -5,11 +5,16 @@ Init the app
 import os
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask
+from flask_migrate import Migrate
 
 app = Flask(__name__)
-if os.environ['DATABASE_URL']:
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+#if os.environ['DATABASE_URL']:
+try:
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
-
+except KeyError:
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///payment_app.db'
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 from app import views # pylint: disable=c0413
