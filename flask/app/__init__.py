@@ -3,8 +3,8 @@ Init the app
 """
 # pylint: disable=C0103
 import os
-from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask import Flask
 
 app = Flask(__name__)
 if os.environ['DATABASE_URL']:
