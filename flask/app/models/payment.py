@@ -14,10 +14,10 @@ class Payment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     card_holder = db.Column(db.String(80), nullable=False)
     card_number = db.Column(db.String(16), nullable=False)
-    expiration_date = db.Column(db.DateTime, nullable=False)
+    expiration_date = db.Column(db.String, nullable=False)
     security_code = db.Column(db.String(3), nullable=True)
     amount = db.Column(db.Integer, nullable=False)
-    attempted_date = db.Column(db.DateTime, nullable=False)
+    attempted_date = db.Column(db.String, nullable=False)
 
 
     def __init__(self, **kwargs):
