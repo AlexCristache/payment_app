@@ -3,7 +3,6 @@ The model for the SQLAlchemy payment object.
 """
 # pylint: disable=R0903,E0401
 from app import db
-#from sqlalchemy import Column, Integer, String, DateTime
 
 class Payment(db.Models):
     """
