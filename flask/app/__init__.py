@@ -1,7 +1,7 @@
 """
 Init the app
 """
-# pylint: disable=C0103
+# pylint: disable=C0103, E0401, E0611
 import os
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask
