@@ -4,6 +4,8 @@ Define the app endpoints.
 import os
 from app import app # pylint: disable=R0401
 
+__all__ = ["index"]
+
 @app.route("/")
 def index():
     """

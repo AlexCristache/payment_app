@@ -9,5 +9,7 @@ ADD . /app
 # Install the dependencies
 RUN pip install -r requirements.txt
 
+ENV DATABASE_URL="localhost:5432"
+
 # run the command to start uWSGI
 CMD ["uwsgi", "app.ini"]

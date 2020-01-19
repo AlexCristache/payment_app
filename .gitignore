@@ -2,3 +2,5 @@ flask/payment_app_venv/
 flask/__pycache__/
 flask/app/__pycache__/
 flask/app/tests/__pycache__/
+flask/app/models/__pycache__/
+flask/app/views/__pycache__/
