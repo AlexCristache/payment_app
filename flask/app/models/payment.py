@@ -4,14 +4,14 @@ The model for the SQLAlchemy payment object.
 # pylint: disable=R0903,E0401
 from app import db
 
-class Payment(db.Models):
+class Payment(db.Model):
     """
     Payment class that abstracts the database schema which records the
     payments that were made.
     """
     __tablename__ = 'payments'
 
-    id = db.appColumn(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     card_holder = db.Column(db.String(80), nullable=False)
     card_number = db.Column(db.String(16), nullable=False)
     expiration_date = db.Column(db.DateTime, nullable=False)
